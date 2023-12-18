@@ -1,0 +1,19 @@
+@layout('layouts/main')
+
+@set('title', 'Categorias')
+
+@section('content')
+<section class="card-form">
+  <h3 class="card-title">Cadastrar Categoria</h3>
+  <form action="{{ route('category.store')}}" method="POST">
+
+    <label for="name">Categoria</label>
+    <input type="text" name="name" id="name" placeholder="name">
+    @if(flashMessages.has('errors.name'))
+    <span>{{flashMessages.get('errors.name')}}</span>
+    @endif
+
+    <button class="btn primary-btn" type="submit">Salvar</button>
+  </form>
+</section>
+@end
